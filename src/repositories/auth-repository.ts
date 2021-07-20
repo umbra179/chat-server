@@ -2,10 +2,10 @@ import MongoDB from "../configs/mongo-db";
 import User, { IUser } from "../models/user";
 
 class AuthRepository {
+    private mongoDb: MongoDB;
 
-
-    constructor(private mongoDb: MongoDB) {
-
+    constructor() {
+        this.mongoDb = new MongoDB();
     }
 
     register(): Promise<IUser> {
