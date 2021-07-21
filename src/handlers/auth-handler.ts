@@ -18,6 +18,16 @@ class AuthHandler {
         }
     }
 
+    async login(req: Request, res: Response) {
+        try {
+            
+            res.status(200);
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({ error });
+        }
+    }
+
     async getUsers(req: Request, res: Response) {
         try {
             const users = await this.authRepository.getUsers();

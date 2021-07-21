@@ -12,11 +12,15 @@ export default class AuthRoutes {
 
     include(): void {
         this.router.get('/register', (req: Request, res: Response) => { 
-            this.authHandler.register(req, res) 
+            this.authHandler.register(req, res);
         });
 
+        this.router.post('/login', (req:Request, res:Response) => {
+            this.authHandler.login(req, res);
+        })
+
         this.router.get('/getUsers', (req: Request, res: Response) => { 
-            this.authHandler.getUsers(req, res) 
+            this.authHandler.getUsers(req, res);
         });
     }
 }
